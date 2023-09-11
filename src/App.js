@@ -1,11 +1,23 @@
 import "./App.css";
-import Navbar from "../src/components/Navbar";
-import SlideShow from "./components/SlideShow";
 import Main from "./components/Main";
+import ContactUsPage from "./pages/ContactUsPage";
+import { BrowserRouter as Router, Route, Routes, BrowserRouter } from 'react-router-dom';
+import GalleryPage from "./pages/GalleryPage";
+
+
 function App() {
   return (
     <div className="App">
-      <Main />
+      <BrowserRouter>
+      <Routes >
+      <Route index element={<Main />} />
+      <Route path="/contactUsPage" element={<ContactUsPage />} />
+      <Route path="/GalleryPage" element={<GalleryPage />} />
+
+
+      </Routes>
+      </BrowserRouter>
+      
     </div>
   );
 }
